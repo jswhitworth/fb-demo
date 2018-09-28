@@ -12,7 +12,6 @@ resources:
 - name: "health-check"
   type: "compute.v1.httpHealthCheck"
   properties:
-    requestPath: “/”
     checkIntervalSec: 10
 - name: "forwarding-rule"
   type: "compute.v1.forwardingRule"
