@@ -1,6 +1,3 @@
-imports:
-  - path: itemp.py
-
 resources:
 - name: "target-pool"
   type: "compute.v1.targetPool"
@@ -30,11 +27,22 @@ resources:
     targetPools:
       - $(ref.target-pool.selfLink)
 - name: tmpl
-  type: itemp.py
+  type: compute.v1.instanceTemplate
   properties:
+    zone: us-east1-c
     tags:
       items:
         - http-server
+    machineType: https://www.googleapis.com/compute/v1/projects/gke-demo-217719/zones/us-east1-c/machineTypes/f1-micro
+    disks:
+    - deviceName: boot
+      type: PERSISTENT
+      boot: true
+      autoDelete: true
+      initializeParams:
+        sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/family/debian-9
+    networkInterfaces:
+    - network: https://www.googleapis.com/compute/v1/projects/gke-demo-217719/global/networks/default
     metadata:
       items:
         - key: startup-script
