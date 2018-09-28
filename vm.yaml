@@ -4,7 +4,8 @@ resources:
   properties:
     zone: us-east1-b
     tags:
-      - http-server
+      items:
+        - http-server
     machineType: https://www.googleapis.com/compute/v1/projects/gke-demo-217719/zones/us-east1-b/machineTypes/f1-micro
     disks:
     - deviceName: boot
@@ -31,7 +32,8 @@ resources:
   properties:
     zone: us-east1-c
     tags:
-      - http-server
+      items:
+        - http-server
     machineType: https://www.googleapis.com/compute/v1/projects/gke-demo-217719/zones/us-east1-c/machineTypes/f1-micro
     disks:
     - deviceName: boot
