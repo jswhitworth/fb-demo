@@ -43,12 +43,12 @@ resources:
         sourceImage: https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/family/debian-9
     networkInterfaces:
     - network: https://www.googleapis.com/compute/v1/projects/gke-demo-217719/global/networks/default
-    metadata:
-      items:
-        - key: startup-script
-          value: "
-          #!/bin/bash\n
-          apt-get update\n
-          apt-get install -y apache2\n
-          echo '<!doctype html><html><body><h1>Hi FizzBuzz! www01</h1></body></html>' | sudo tee /var/www/html/index.html
-          "
+  metadata:
+    items:
+      - key: startup-script
+        value: "
+        #!/bin/bash\n
+        apt-get update\n
+        apt-get install -y apache2\n
+        echo '<!doctype html><html><body><h1>Hi FizzBuzz! www01</h1></body></html>' | sudo tee /var/www/html/index.html
+        "
