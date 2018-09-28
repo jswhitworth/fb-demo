@@ -1,3 +1,6 @@
+def GenerateConfig(context):
+  """Generate configuration."""
+resources = []
 resources.append({
     'name': 'tmpl',
     'type': 'compute.v1.instanceTemplate',
@@ -18,3 +21,4 @@ resources.append({
         }]
     }
 })
+return {'resources': resources}
